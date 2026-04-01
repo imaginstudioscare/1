@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Imagin Studios</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="portfolio-label">PORTFOLIO</div>
+
+<!-- HERO -->
+<section class="hero reveal">
+    <h1>Imagin Studios</h1>
+    <div class="glow-line"></div>
+    <p class="typing"></p>
+    <a href="https://wa.me/91YOURNUMBER" class="btn">Order on WhatsApp</a>
+</section>
+
+<!-- TAGS -->
+<section class="tags reveal">
+    <h2>Our Services</h2>
+    <p class="subtitle">Delivering fast, professional, and viral content for your brand</p>
+    <div class="tag">⚡ 2 Hour Delivery</div>
+    <div class="tag">👥 100+ Clients</div>
+    <div class="tag">🎬 Cinematic Edits</div>
+    <div class="tag">🔥 Viral Content Style</div>
+</section>
+
+<!-- BEFORE AFTER -->
+<section class="comparison reveal">
+    <h2>Before / After</h2>
+    <p class="subtitle">See the transformation of our cinematic edits</p>
+    <div class="video-container">
+        <div class="video-wrapper">
+            <p>Before</p>
+            <video controls class="video-box large">
+                <source src="before.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-wrapper">
+            <p>After</p>
+            <video controls class="video-box large">
+                <source src="after.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+</section>
+
+<!-- SOFTWARE -->
+<section class="software reveal">
+    <h2>Tools We Use</h2>
+    <p class="subtitle">Professional software for professional results</p>
+    <div class="tools">
+        <div class="tool"><img src="premiere.png"><p>Premiere Pro</p></div>
+        <div class="tool"><img src="davinci.png"><p>DaVinci Resolve</p></div>
+        <div class="tool"><img src="lightroom.png"><p>Lightroom</p></div>
+    </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing reveal">
+    <h2>Pricing</h2>
+    <p class="subtitle">Choose a plan that suits your needs</p>
+    <div class="plans">
+        <div class="plan">Basic - ₹999</div>
+        <div class="plan">Pro - ₹1999</div>
+        <div class="plan">Premium - ₹3999</div>
+    </div>
+</section>
+
+<!-- LOGIN -->
+<section class="login reveal">
+    <div class="login-box">
+        <h2>Start Your Project</h2>
+        <p class="subtitle">Send us your details and let's create magic</p>
+        <form onsubmit="return loginUser()">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Email" required>
+            <button type="submit">Get Started</button>
+        </form>
+    </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

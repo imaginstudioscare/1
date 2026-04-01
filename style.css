@@ -1,0 +1,125 @@
+/* BODY */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #000;
+    color: white;
+    overflow-x: hidden;
+    cursor: default;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    height: 100vh; /* full viewport height */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+    padding: 20px;
+}
+
+/* PORTFOLIO LABEL */
+.portfolio-label {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    color: #00f7ff;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+}
+.hero h1 {
+    font-size: 80px; /* larger main title */
+    text-shadow: 0 0 50px #00f7ff;
+}
+.typing { 
+    color: #aaa; 
+    height: 40px; 
+    margin-top: 20px; 
+    font-size: 28px;
+}
+.glow-line {
+    width: 180px; height: 4px; margin: 30px auto;
+    background: linear-gradient(90deg, #00f7ff, #ff00ff);
+    border-radius: 10px;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {0%{opacity:0.5;}50%{opacity:1;}100%{opacity:0.5;}}
+
+/* BUTTON */
+.btn {
+    display: inline-block; margin-top: 30px;
+    padding: 18px 40px; border-radius: 50px;
+    background: linear-gradient(45deg, #00f7ff, #ff00ff);
+    color: black; font-weight:600; text-decoration:none;
+    font-size: 22px;
+    transition: 0.3s;
+}
+.btn:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 30px rgba(0,247,255,0.0);
+}
+
+/* TAGS */
+.tags { display:flex; flex-wrap:wrap; justify-content:center; gap:40px;}
+.tag { padding: 18px 28px; border-radius:35px; background: rgba(255,255,255,0.05); font-size:20px; transition: 0.3s; }
+.tag:hover { transform: scale(1.1);box-shadow: 0 10px 50px rgba(0,247,255,0.5), 0 0 25px rgba(255,0,255,0.3); }
+
+/* SUBTITLE */
+.subtitle { color: #aaa; font-size: 22px; margin-top: 15px; text-align:center; }
+
+/* VIDEO */
+.comparison { text-align:center; }
+.video-container { display:flex; gap:50px; justify-content:center; flex-wrap:wrap; }
+.video-wrapper { text-align:center; }
+.video-wrapper p { margin-bottom:25px; color:#aaa; font-size:22px; }
+.video-box.large { width:480px; border-radius:25px; transition:0.4s; }
+.video-box.large:hover { 
+    transform: scale(1.05);
+    box-shadow: 0 10px 50px rgba(0,247,255,0.5), 0 0 25px rgba(255,0,255,0.5); 
+}
+
+/* SOFTWARE */
+.software { text-align:center; }
+.software h2 { font-size:50px; }
+.software .subtitle { font-size:24px; }
+.tools { display:flex; justify-content:center; flex-wrap:wrap; gap:40px; margin-top:30px; }
+.tool { text-align:center; padding:25px; border-radius:20px; background:#111; cursor:pointer; box-shadow: 0 0 15px rgba(0,0,0,0.5); transform: translateY(30px); opacity: 0; transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.6s ease; }
+.tool.active { transform: translateY(0); opacity: 1; }
+.tool:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 10px 50px rgba(0,247,255,0.5), 0 0 25px rgba(255,0,255,0.3); }
+.tool img { width:60px; transition: transform 0.4s; }
+.tool:hover img { transform: scale(1.2); }
+
+/* PRICING */
+.pricing { text-align:center; }
+.pricing h2 { font-size:50px; }
+.plans { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:20px; }
+.plan { padding:25px; background:#111; border-radius:20px; font-size:22px; transition: 0.4s; cursor: pointer; box-shadow: 0 0 15px rgba(0,0,0,0.5); }
+.plan:hover { transform: translateY(-10px) scale(1.05); box-shadow: 0 10px 50px rgba(0,247,255,0.5), 0 0 25px rgba(255,0,255,0.3); }
+
+/* LOGIN */
+.login { display:flex; justify-content:center; }
+.login-box { backdrop-filter: blur(15px); background: rgba(255,255,255,0.05); padding:40px; border-radius:25px; text-align:center; }
+.login-box h2 { font-size:40px; margin-bottom:20px; }
+.login-box input { display:block; margin:15px auto; padding:15px; width:300px; background:#111; border:none; color:white; border-radius:12px; font-size:18px; }
+.login-box button { padding:15px 25px; font-size:20px; background:linear-gradient(45deg,#00f7ff,#ff00ff); border:none; border-radius:25px; cursor:pointer;}
+
+/* SCROLL ANIMATION */
+.reveal { opacity:0; transform:translateY(50px); transition:1s; }
+.reveal.active { opacity:1; transform:translateY(0); }
+
+/* MOBILE */
+@media(max-width:768px){
+    .hero h1{font-size:50px;}
+    .typing{font-size:22px;}
+    .video-box.large{width:90%;}
+    .tools{flex-direction:column; align-items:center;}
+    .plans{flex-direction:column;}
+}
