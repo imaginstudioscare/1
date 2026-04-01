@@ -1,10 +1,27 @@
-// LOGIN
+// ===============================
+// DYNAMIC SECTION HEIGHT FOR MOBILE
+// ===============================
+function setSectionHeight() {
+    const vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+    document.querySelectorAll('section').forEach(section => {
+        section.style.height = `calc(var(--vh, 1vh) * 100)`;
+    });
+}
+window.addEventListener('resize', setSectionHeight);
+window.addEventListener('load', setSectionHeight);
+
+// ===============================
+// LOGIN FORM
+// ===============================
 function loginUser(){ 
     alert("Project request received!"); 
     return false; 
 }
 
+// ===============================
 // SCROLL ANIMATION
+// ===============================
 window.addEventListener("scroll",()=>{
     document.querySelectorAll(".reveal").forEach(el=>{
         if(el.getBoundingClientRect().top<window.innerHeight-100){
@@ -19,22 +36,15 @@ window.addEventListener("scroll",()=>{
 });
 
 // ===============================
-// TYPING ANIMATION - MOBILE SMOOTH
+// TYPING ANIMATION
 // ===============================
 const texts = ["Cinematic Edits", "Viral Reels", "Pro Color Grading"];
 let currentText = 0;
 let charIndex = 0;
 let deleting = false;
 
-const element = document.querySelector(".typing");
-
-// Precompute the max width in characters for smooth container
-const maxLength = Math.max(...texts.map(t => t.length));
-element.style.display = "inline-block";
-element.style.width = `${maxLength}ch`; // fixes jump
-element.style.whiteSpace = "nowrap";    // keep text on one line
-
 function type() {
+    const element = document.querySelector(".typing");
     const fullText = texts[currentText];
 
     if (!deleting) {
@@ -42,7 +52,7 @@ function type() {
         element.textContent = fullText.substring(0, charIndex);
         if (charIndex === fullText.length) {
             deleting = true;
-            setTimeout(type, 1000); // pause at full text
+            setTimeout(type, 1000);
             return;
         }
     } else {
@@ -53,8 +63,6 @@ function type() {
             currentText = (currentText + 1) % texts.length;
         }
     }
-
     setTimeout(type, deleting ? 50 : 100);
 }
-
 type();
