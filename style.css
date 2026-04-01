@@ -13,7 +13,7 @@ body {
 }
 
 section {
-    height: 100vh; /* full viewport height */
+    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -23,9 +23,7 @@ section {
     padding: 20px;
 }
 
-/* =======================
-   PORTFOLIO LABEL
-======================= */
+/* PORTFOLIO LABEL */
 .portfolio-label {
     position: fixed;
     top: 20px;
@@ -35,207 +33,122 @@ section {
     font-size: 18px;
 }
 
+/* HERO */
+.hero { text-align:center; }
+.hero h1 { font-size:80px; text-shadow:0 0 50px #00f7ff; }
+
 /* =======================
-   HERO SECTION
+   TYPING FIX (PREVENT JUMP)
 ======================= */
-.hero {
-    text-align: center;
-}
-.hero h1 {
-    font-size: 80px;
-    text-shadow: 0 0 50px #00f7ff;
-}
 .typing {
     color: #aaa;
-    height: 40px;
-    margin-top: 20px;
     font-size: 28px;
-}
-.glow-line {
-    width: 180px;
-    height: 4px;
-    margin: 30px auto;
-    background: linear-gradient(90deg, #00f7ff, #ff00ff);
-    border-radius: 10px;
-    animation: pulse 2s infinite;
-}
-@keyframes pulse {
-    0% {opacity:0.5;}
-    50% {opacity:1;}
-    100% {opacity:0.5;}
+    margin-top: 20px;
+
+    /* FIX: prevent jumping */
+    height: 40px;
+    min-height: 40px;
+    line-height: 1.2;
+    overflow: hidden;
 }
 
-/* =======================
-   BUTTON
-======================= */
+.glow-line {
+    width:180px;
+    height:4px;
+    margin:30px auto;
+    background:linear-gradient(90deg,#00f7ff,#ff00ff);
+    border-radius:10px;
+    animation:pulse 2s infinite;
+}
+@keyframes pulse { 0%{opacity:0.5;}50%{opacity:1;}100%{opacity:0.5;} }
+
+/* BUTTON */
 .btn {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 18px 40px;
-    border-radius: 50px;
-    background: linear-gradient(45deg, #00f7ff, #ff00ff);
-    color: black;
+    display:inline-block;
+    margin-top:30px;
+    padding:18px 40px;
+    border-radius:50px;
+    background:linear-gradient(45deg,#00f7ff,#ff00ff);
+    color:black;
     font-weight:600;
     text-decoration:none;
-    font-size: 22px;
-    transition: 0.3s;
+    font-size:22px;
+    transition:0.3s;
 }
 .btn:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 10px 30px rgba(0,247,255,0.0);
+    transform:translateY(-3px) scale(1.05);
+    box-shadow:0 10px 30px rgba(0,247,255,0);
 }
 
-/* =======================
-   TAGS SECTION
-======================= */
-.tags {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:40px;
-}
+/* TAGS */
+.tags { display:flex; flex-wrap:wrap; justify-content:center; gap:40px; }
 .tag {
-    padding: 18px 28px;
+    padding:18px 28px;
     border-radius:35px;
-    background: rgba(255,255,255,0.05);
+    background:rgba(255,255,255,0.05);
     font-size:20px;
-    transition: 0.3s;
+    transition:0.3s;
 }
 .tag:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 50px rgba(0,247,255,0.5), 0 0 25px rgba(255,0,255,0.3);
+    transform:scale(1.1);
+    box-shadow:0 10px 50px rgba(0,247,255,0.5),0 0 25px rgba(255,0,255,0.3);
 }
-.subtitle {
-    color: #aaa;
-    font-size: 22px;
-    margin-top: 15px;
-    text-align:center;
-}
+.subtitle { color:#aaa; font-size:22px; margin-top:15px; text-align:center; }
 
-/* =======================
-   VIDEO SECTION
-======================= */
-.comparison {
-    text-align:center;
-}
-.video-container {
-    display:flex;
-    gap:50px;
-    justify-content:center;
-    flex-wrap:wrap;
-}
-.video-wrapper {
-    text-align:center;
-}
-.video-wrapper p {
-    margin-bottom:25px;
-    color:#aaa;
-    font-size:22px;
-}
-.video-box.large {
-    width:480px;
-    border-radius:25px;
-    transition:0.4s;
-}
-.video-box.large:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 50px rgba(0,247,255,0.5), 0 0 25px rgba(255,0,255,0.5);
-}
+/* VIDEO */
+.comparison { text-align:center; }
+.video-container { display:flex; gap:50px; justify-content:center; flex-wrap:wrap; }
+.video-wrapper { text-align:center; }
+.video-wrapper p { margin-bottom:25px; color:#aaa; font-size:22px; }
+.video-box.large { width:480px; border-radius:25px; transition:0.4s; }
+.video-box.large:hover { transform:scale(1.05); box-shadow:0 10px 50px rgba(0,247,255,0.5),0 0 25px rgba(255,0,255,0.5); }
 
-/* =======================
-   SOFTWARE TOOLS
-======================= */
-.software {
-    text-align:center;
-}
-.software h2 {
-    font-size:50px;
-}
-.software .subtitle {
-    font-size:24px;
-}
-.tools {
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:40px;
-    margin-top:30px;
-}
+/* SOFTWARE */
+.software { text-align:center; }
+.software h2 { font-size:50px; }
+.software .subtitle { font-size:24px; }
+.tools { display:flex; justify-content:center; flex-wrap:wrap; gap:40px; margin-top:30px; }
 .tool {
     text-align:center;
     padding:25px;
     border-radius:20px;
     background:#111;
     cursor:pointer;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    transform: translateY(30px);
-    opacity: 0;
-    transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.6s ease;
+    box-shadow:0 0 15px rgba(0,0,0,0.5);
+    transform:translateY(30px);
+    opacity:0;
+    transition:transform 0.5s ease, box-shadow 0.5s ease, opacity 0.6s ease;
 }
-.tool.active {
-    transform: translateY(0);
-    opacity: 1;
-}
-.tool:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 10px 50px rgba(0,247,255,0.5), 0 0 25px rgba(255,0,255,0.3);
-}
-.tool img {
-    width:60px;
-    transition: transform 0.4s;
-}
-.tool:hover img {
-    transform: scale(1.2);
-}
+.tool.active { transform:translateY(0); opacity:1; }
+.tool:hover { transform:translateY(-10px) scale(1.05); box-shadow:0 10px 50px rgba(0,247,255,0.5),0 0 25px rgba(255,0,255,0.3);}
+.tool img { width:60px; transition: transform 0.4s; }
+.tool:hover img { transform:scale(1.2); }
 
-/* =======================
-   PRICING SECTION
-======================= */
-.pricing {
-    text-align:center;
-}
-.pricing h2 {
-    font-size:50px;
-}
-.plans {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:30px;
-    margin-top:20px;
-}
+/* PRICING */
+.pricing { text-align:center; }
+.pricing h2 { font-size:50px; }
+.plans { display:flex; flex-wrap:wrap; justify-content:center; gap:30px; margin-top:20px; }
 .plan {
     padding:25px;
     background:#111;
     border-radius:20px;
     font-size:22px;
-    transition: 0.4s;
-    cursor: pointer;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    transition:0.4s;
+    cursor:pointer;
+    box-shadow:0 0 15px rgba(0,0,0,0.5);
 }
-.plan:hover {
-    transform: translateY(-10px) scale(1.05);
-    box-shadow: 0 10px 50px rgba(0,247,255,0.5), 0 0 25px rgba(255,0,255,0.3);
-}
+.plan:hover { transform:translateY(-10px) scale(1.05); box-shadow:0 10px 50px rgba(0,247,255,0.5),0 0 25px rgba(255,0,255,0.3); }
 
-/* =======================
-   LOGIN SECTION
-======================= */
-.login {
-    display:flex;
-    justify-content:center;
-}
+/* LOGIN */
+.login { display:flex; justify-content:center; }
 .login-box {
     backdrop-filter: blur(15px);
-    background: rgba(255,255,255,0.05);
+    background:rgba(255,255,255,0.05);
     padding:40px;
     border-radius:25px;
     text-align:center;
 }
-.login-box h2 {
-    font-size:40px;
-    margin-bottom:20px;
-}
+.login-box h2 { font-size:40px; margin-bottom:20px; }
 .login-box input {
     display:block;
     margin:15px auto;
@@ -256,68 +169,48 @@ section {
     cursor:pointer;
 }
 
-/* =======================
-   SCROLL ANIMATIONS
-======================= */
-.reveal {
-    opacity:0;
-    transform:translateY(50px);
-    transition:1s;
-}
-.reveal.active {
-    opacity:1;
-    transform:translateY(0);
-}
+/* SCROLL ANIMATION */
+.reveal { opacity:0; transform:translateY(50px); transition:1s; }
+.reveal.active { opacity:1; transform:translateY(0); }
 
 /* =======================
    MOBILE RESPONSIVE
 ======================= */
-@media (max-width: 768px) {
+@media(max-width:768px){
+    .hero h1{ font-size:40px; text-shadow:0 0 30px #00f7ff;}
+    .typing{ font-size:20px; height:28px; min-height:28px; margin-top:15px; line-height:1.2; }
+    .btn{ padding:12px 30px; font-size:18px; }
 
-    /* HERO */
-    .hero h1 { font-size: 40px; text-shadow: 0 0 30px #00f7ff; }
-    .typing { font-size: 20px; height: auto; margin-top: 15px; }
-    .btn { padding: 12px 30px; font-size: 18px; }
+    .tags h2{ font-size:28px; }
+    .subtitle{ font-size:18px; }
+    .tag{ padding:12px 20px; font-size:16px; }
 
-    /* TAGS */
-    .tags h2 { font-size: 28px; }
-    .subtitle { font-size: 18px; }
-    .tag { padding: 12px 20px; font-size: 16px; }
+    .video-container{ flex-direction:column; gap:30px; align-items:center; }
+    .video-box.large{ width:95%; }
 
-    /* VIDEO SECTION */
-    .video-container { flex-direction: column; gap: 30px; align-items: center; }
-    .video-box.large { width: 95%; }
+    .software h2{ font-size:32px; }
+    .tools{ flex-direction:column; gap:20px; }
+    .tool{ width:80%; padding:20px; }
+    .tool img{ width:50px; }
 
-    /* SOFTWARE TOOLS */
-    .software h2 { font-size: 32px; }
-    .tools { flex-direction: column; gap: 20px; }
-    .tool { width: 80%; padding: 20px; }
-    .tool img { width: 50px; }
+    .pricing h2{ font-size:32px; }
+    .plans{ flex-direction:column; gap:20px; }
+    .plan{ width:90%; font-size:18px; }
 
-    /* PRICING */
-    .pricing h2 { font-size: 32px; }
-    .plans { flex-direction: column; gap: 20px; }
-    .plan { width: 90%; font-size: 18px; }
+    .login-box{ width:90%; padding:25px; }
+    .login-box h2{ font-size:28px; }
+    .login-box input{ width:90%; padding:12px; font-size:16px; }
+    .login-box button{ width:90%; padding:12px; font-size:18px; }
 
-    /* LOGIN */
-    .login-box { width: 90%; padding: 25px; }
-    .login-box h2 { font-size: 28px; }
-    .login-box input { width: 90%; padding: 12px; font-size: 16px; }
-    .login-box button { width: 90%; padding: 12px; font-size: 18px; }
+    .portfolio-label{ font-size:14px; top:15px; left:15px; }
 
-    /* PORTFOLIO LABEL */
-    .portfolio-label { font-size: 14px; top: 15px; left: 15px; }
-
-    /* SCROLL FIX */
-    section { height: auto; padding: 50px 20px; }
+    section{ height:auto; padding:50px 20px; }
 }
 
-/* =======================
-   SMALLER MOBILE
-======================= */
-@media (max-width: 480px) {
-    .hero h1 { font-size: 30px; }
-    .subtitle { font-size: 16px; }
-    .tag { padding: 10px 15px; font-size: 14px; }
-    .btn { padding: 10px 20px; font-size: 16px; }
+@media(max-width:480px){
+    .hero h1{ font-size:30px; }
+    .typing{ font-size:16px; height:22px; min-height:22px; line-height:1.2; }
+    .subtitle{ font-size:16px; }
+    .tag{ padding:10px 15px; font-size:14px; }
+    .btn{ padding:10px 20px; font-size:16px; }
 }
